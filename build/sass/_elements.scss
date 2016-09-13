@@ -1,0 +1,15 @@
+/* 
+ * Created by workpc on 9/13/16.
+ */
+@import "variables";
+
+h1 {
+    color: #369;
+    font-family: $font-family;
+    font-size: $font-seze-normal;
+}
+h2, h3 {
+    color: #444;
+    font-family: $font-family;
+    font-weight: lighter;
+}
