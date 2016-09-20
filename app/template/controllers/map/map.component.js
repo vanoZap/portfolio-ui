@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var MapComponent = (function () {
+    function MapComponent() {
     }
-    AppComponent = __decorate([
+    MapComponent.prototype.ngOnInit = function () {
+        // locate in vendor
+        initMap();
+    };
+    MapComponent = __decorate([
         core_1.Component({
-            selector: 'app-main',
-            templateUrl: 'app/template/main.app.tp.html'
+            selector: 'app-map',
+            templateUrl: 'app/template/map.tp.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], MapComponent);
+    return MapComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MapComponent = MapComponent;
+//# sourceMappingURL=map.component.js.map
