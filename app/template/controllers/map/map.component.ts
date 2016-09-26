@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var initMap: any;
+
 @Component({
     selector: 'app-map',
     templateUrl: 'app/template/map.tp.html'

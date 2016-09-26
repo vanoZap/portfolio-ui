@@ -7,11 +7,11 @@ var minifyjs = require('gulp-js-minify');
 var concat = require("gulp-concat");
  
 gulp.task('sass', function () {
-  return gulp.src('build/sass/**/*.scss')
+  return gulp.src(['build/sass/**/*.scss', 'node_modules/bootstrap/scss/**/*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('styles/css'));
+    .pipe(gulp.dest('asset/css'));
 });
 
 gulp.task('minify-js', function(){

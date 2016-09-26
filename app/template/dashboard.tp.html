@@ -1,3 +1,37 @@
-<nav class="dashboard">
-
-</nav>
+<div class="dashboard">
+    <div class="profile">
+        <div class="avatar" [ngStyle]="avatar"></div>
+        <h4 class="name">{{name}}</h4>
+        <p class="profession">{{profession}}</p>
+    </div>
+    <nav class="col-xs flex-column flex-items-xs-center">
+        <i class="fa fa-bars"></i>
+        <ul class="nav">
+            <li class="nav-item">
+                <span>stat</span>
+                <ul class="nav">
+                    <li class="nav-item flex-column flex-items-xs-center"><i class="fa fa-map-o"></i></li>
+                    <li class="nav-item flex-column flex-items-xs-center"><i class="fa fa-line-chart" aria-hidden="true"></i></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <ul class="nav">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <ul class="nav">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <ul class="nav">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

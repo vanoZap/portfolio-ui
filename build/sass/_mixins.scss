@@ -1,0 +1,17 @@
+/* 
+ * Created by workpc on 9/26/16.
+ */
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}

@@ -13,6 +13,9 @@ var DashboardComponent = (function () {
     function DashboardComponent() {
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        this.name = 'IG';
+        this.profession = 'Web Developer';
+        this.avatar = { background: 'url(../asset/img/man.jpg) center center no-repeat' };
     };
     DashboardComponent = __decorate([
         core_1.Component({

@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
 
-    constructor(
-    ) { }
+    public avatar: Object;
+    public name: string;
+    public profession: string;
+
+    constructor() { }
 
     ngOnInit() {
+        this.name = 'IG';
+        this.profession = 'Web Developer';
+        this.avatar = {background: 'url(../asset/img/man.jpg) center center no-repeat'};
     }
 }
