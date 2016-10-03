@@ -1,0 +1,66 @@
+.view-profile .photo-area {
+    height: 200px;
+    position: relative;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.view-profile .photo-profile {
+    position: absolute;
+    top: 0;
+    right :0;
+    bottom: 0;
+    left: 0;
+    height: 110px;
+    width: 110px;
+    border-radius: 110px;
+    margin: auto;
+    background-size: cover!important;
+    -webkit-background-size: cover!important;
+    z-index: 110;
+}
+
+.view-profile .photo-area:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right :0;
+    bottom: 0;
+    left: 0;
+    height: 116px;
+    width: 116px;
+    border-radius: 116px;
+    margin: auto;
+    background-color: $s-ligt-gray;
+    z-index: 105;
+}
+
+.view-profile .bg-canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover!important;
+    -webkit-background-size: cover!important;
+    z-index: -1;
+}
+
+.view-profile .description {
+    text-align: center;
+    padding: 25px;
+    background-color: $wite;
+}
+
+.view-profile .stat {
+    margin-top: 3px;
+    padding: 15px;
+    background-color: $wite;
+}
+
+.view-profile .list-group-item {
+    padding: 0;
+    border: none;
+}
+
+.view-profile .stat .list-group-item label {
+    margin-bottom: 10px;
+}

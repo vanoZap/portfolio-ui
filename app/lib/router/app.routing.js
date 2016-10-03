@@ -1,14 +1,24 @@
 "use strict";
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./../../template/controllers/dashboard/dashboard.component');
+var map_component_1 = require('./../../template/controllers/map/map.component');
+var chart_component_1 = require('./../../template/controllers/charts/chart.component');
+var view_component_1 = require('./../../template/controllers/view/view.component');
 var appRoutes = [
     {
-        path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        path: 'map',
+        component: map_component_1.MapComponent
+    },
+    {
+        path: 'chart',
+        component: chart_component_1.ChartComponent
+    },
+    {
+        path: 'view',
+        component: view_component_1.ViewComponent
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/map',
         pathMatch: 'full'
     }
 ];

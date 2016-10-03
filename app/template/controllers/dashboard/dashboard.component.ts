@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, trigger, state, style, transition, animate } from '@angular/core';
 import { Router } from '@angular/router';
+import {ProfileService} from "../../../lib/helpers/profiler/profiler.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -7,17 +8,9 @@ import { Router } from '@angular/router';
     animations: [
         trigger('acordion', [
             state('in', style({height: '*', overflow: 'hidden'})),
-            transition('in => out', animate('400ms ease-in')),
-            transition('out => in', animate('400ms ease-in')),
-            transition('* => void', [
-                style({height: '*'}),
-                animate(800, style({height: 0}))
-            ]),
             state('out', style({height: 0, overflow: 'hidden'})),
-            transition('* => void', [
-                style({height: 0}),
-                animate(800, style({height: '*'}))
-            ])
+            transition('in => out', animate('400ms ease-in')),
+            transition('out => in', animate('400ms ease-in'))
         ])
     ]
 })
@@ -27,7 +20,8 @@ export class DashboardComponent implements OnInit {
     public avatar: Object;
     public name: string;
     public profession: string;
-    public navStatus: 'out';
+    public navStatus = 'out';
+    public profile: any;
     public menuItems = [
         {
             title: 'stat',
@@ -40,7 +34,7 @@ export class DashboardComponent implements OnInit {
                 },
                 {
                     name: 'chart',
-                    title: 'map',
+                    title: 'chart',
                     icon: 'fa fa-line-chart'
                 }
             ]
@@ -49,6 +43,11 @@ export class DashboardComponent implements OnInit {
             title: 'prof',
             status: 'out',
             subMenu: [
+                {
+                    name: 'view',
+                    title: 'view',
+                    icon: 'fa fa-eye'
+                },
                 {
                     name: 'new',
                     title: 'new',
@@ -63,11 +62,15 @@ export class DashboardComponent implements OnInit {
         }
     ];
 
-    constructor() { }
+    constructor(
+        private router: Router,
+        private profile: ProfileService) {
+        this.profile = profile.getProfile();
+    }
 
     ngOnInit() {
-        this.name = 'IG';
-        this.profession = 'Web Developer';
+        this.name = this.profile.info.shortName;
+        this.profession = this.profile.info.profession;
         this.avatar = {background: 'url(../asset/img/man.jpg) center center no-repeat'};
     }
 
@@ -77,5 +80,12 @@ export class DashboardComponent implements OnInit {
 
     onShowItems() {
         this.navStatus = this.navStatus === 'in' ? 'out' : 'in';
+    }
+
+    goLink(e, name) {
+        e.preventDefault();
+        e.stopPropagation();
+        let link = ['/'+name];
+        this.router.navigate(link);
     }
 }

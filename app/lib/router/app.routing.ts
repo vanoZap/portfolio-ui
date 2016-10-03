@@ -1,15 +1,25 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './../../template/controllers/dashboard/dashboard.component';
+import { MapComponent } from './../../template/controllers/map/map.component';
+import { ChartComponent } from './../../template/controllers/charts/chart.component';
+import { ViewComponent } from './../../template/controllers/view/view.component';
 
 const appRoutes: Routes = [
     {
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'map',
+        component: MapComponent
+    },
+    {
+        path: 'chart',
+        component: ChartComponent
+    },
+    {
+        path: 'view',
+        component: ViewComponent
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/map',
         pathMatch: 'full'
     }
 ];

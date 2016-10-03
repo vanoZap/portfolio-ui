@@ -15,6 +15,9 @@ var app_routing_1 = require('./../lib/router/app.routing');
 var header_component_1 = require('./../template/controllers/header/header.component');
 var dashboard_component_1 = require('./../template/controllers/dashboard/dashboard.component');
 var map_component_1 = require('./../template/controllers/map/map.component');
+var chart_component_1 = require('./../template/controllers/charts/chart.component');
+var view_component_1 = require('./../template/controllers/view/view.component');
+var profiler_service_1 = require('./../lib/helpers/profiler/profiler.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,8 +31,11 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 header_component_1.HeaderComponent,
                 dashboard_component_1.DashboardComponent,
-                map_component_1.MapComponent
+                map_component_1.MapComponent,
+                chart_component_1.ChartComponent,
+                view_component_1.ViewComponent
             ],
+            providers: [profiler_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

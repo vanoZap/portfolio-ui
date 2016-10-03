@@ -9,8 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var profiler_service_1 = require("../../../lib/helpers/profiler/profiler.service");
 var DashboardComponent = (function () {
-    function DashboardComponent() {
+    function DashboardComponent(router, profile) {
+        this.router = router;
+        this.profile = profile;
+        this.navStatus = 'out';
         this.menuItems = [
             {
                 title: 'stat',
@@ -23,7 +28,7 @@ var DashboardComponent = (function () {
                     },
                     {
                         name: 'chart',
-                        title: 'map',
+                        title: 'chart',
                         icon: 'fa fa-line-chart'
                     }
                 ]
@@ -32,6 +37,11 @@ var DashboardComponent = (function () {
                 title: 'prof',
                 status: 'out',
                 subMenu: [
+                    {
+                        name: 'view',
+                        title: 'view',
+                        icon: 'fa fa-eye'
+                    },
                     {
                         name: 'new',
                         title: 'new',
@@ -45,10 +55,11 @@ var DashboardComponent = (function () {
                 ]
             }
         ];
+        this.profile = profile.getProfile();
     }
     DashboardComponent.prototype.ngOnInit = function () {
-        this.name = 'IG';
-        this.profession = 'Web Developer';
+        this.name = this.profile.info.shortName;
+        this.profession = this.profile.info.profession;
         this.avatar = { background: 'url(../asset/img/man.jpg) center center no-repeat' };
     };
     DashboardComponent.prototype.onShowSubItems = function (item) {
@@ -57,6 +68,12 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.onShowItems = function () {
         this.navStatus = this.navStatus === 'in' ? 'out' : 'in';
     };
+    DashboardComponent.prototype.goLink = function (e, name) {
+        e.preventDefault();
+        e.stopPropagation();
+        var link = ['/' + name];
+        this.router.navigate(link);
+    };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'app-dashboard',
@@ -64,21 +81,13 @@ var DashboardComponent = (function () {
             animations: [
                 core_1.trigger('acordion', [
                     core_1.state('in', core_1.style({ height: '*', overflow: 'hidden' })),
-                    core_1.transition('in => out', core_1.animate('400ms ease-in')),
-                    core_1.transition('out => in', core_1.animate('400ms ease-in')),
-                    core_1.transition('* => void', [
-                        core_1.style({ height: '*' }),
-                        core_1.animate(800, core_1.style({ height: 0 }))
-                    ]),
                     core_1.state('out', core_1.style({ height: 0, overflow: 'hidden' })),
-                    core_1.transition('* => void', [
-                        core_1.style({ height: 0 }),
-                        core_1.animate(800, core_1.style({ height: '*' }))
-                    ])
+                    core_1.transition('in => out', core_1.animate('400ms ease-in')),
+                    core_1.transition('out => in', core_1.animate('400ms ease-in'))
                 ])
             ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router, profiler_service_1.ProfileService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

@@ -1,0 +1,35 @@
+<div class="view-profile container-fluid">
+    <div class="profile-info-short col-sm-12 col-md-4">
+        <div class="photo-area">
+            <div class="photo-profile" [ngStyle]="profile.info.style.photo"></div>
+            <div class="bg-canvas" [ngStyle]="profile.info.style.canvas"></div>
+        </div>
+        <div class="description">
+            <h3><strong>{{profile.info.firstName + ' ' + profile.info.lastName}}</strong></h3>
+            <p>{{profile.info.profession}}</p>
+            <p>{{profile.info.description}}</p>
+        </div>
+        <div class="stat">
+            <ul class="list-group clearfix">
+                <li class="list-group-item col-md-12 text-xs-center">
+                    <label><strong>relations</strong></label>
+                    <p class="m-b-0">{{profile.info.relations}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile-settings col-sm-12 col-md-4">
+        <ul *ngFor="let itemS of profile.settings"
+                class="list-group">
+            <li class="list-group-item" >
+                <input type="checkbox" [attr.checked]="itemS.status">
+                <label>{{itemS.name}}</label>
+            </li>
+        </ul>
+    </div>
+    <div class="profile-relations col-sm-12 col-md-4">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
