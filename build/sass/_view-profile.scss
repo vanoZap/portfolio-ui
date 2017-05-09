@@ -64,3 +64,18 @@
 .view-profile .stat .list-group-item label {
     margin-bottom: 10px;
 }
+
+.view-profile .check-on,
+.view-profile .check-off {
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+}
+
+.view-profile .check-on {
+    background: url(../img/sprite.png) 0 0 no-repeat;
+}
+
+.view-profile .check-off {
+    background: url(../img/sprite.png) 0 -23px no-repeat;
+}

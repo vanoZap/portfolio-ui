@@ -1,0 +1,132 @@
+/* 
+ * Created by workpcv on 12/7/16.
+ */
+.schedule {
+    h1 {
+        text-align: center;
+    }
+
+    .header-schedule {
+        margin: 0;
+        border-bottom: 1px solid $green;
+
+        label:nth-child(1) {
+            display: inline-block;
+            float: left;
+            margin-left: 25px;
+        }
+
+        label:nth-child(2) {
+            display: inline-block;
+            float: right;
+            margin-right: 25px;
+        }
+    }
+
+    .table-titles {
+        margin: 25px 25px 0;
+        border-bottom: 1px solid $blue;
+        background-color: $wite;
+
+        label {
+            float: left;
+            display: block;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        label:nth-child(1) {
+            width: 10%;
+        }
+
+        label:nth-child(2) {
+            width: 40%;
+        }
+
+        label:nth-child(3) {
+            width: 30%;
+        }
+
+        label:nth-child(4) {
+            width: 20%;
+        }
+    }
+
+    .schedule-items {
+        margin: 0 25px;
+        padding: 10px 0 0;
+        background-color: $wite;
+        .item {
+            border-bottom: 1px solid $light-gray;
+            > * {
+                display: block;
+                float: left;
+                box-sizing: border-box;
+                padding: 5px 20px;
+            }
+
+            input,
+            textarea {
+                border: none;
+                box-shadow: none;
+                outline: none;
+
+                &:hover, &:active,
+                &:focus {
+                    border: none;
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+
+            .time {
+                width: 10%;
+                input {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .description {
+                width: 50%;
+                resize: none;
+            }
+
+            .tasks {
+                width: 20%;
+                > * {
+                    display: block;
+                }
+
+                span {
+                    &:hover {
+                        color: $light-green;
+                        cursor: pointer;
+                    }
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .location {
+                width: 20%;
+            }
+        }
+
+        .new {
+            padding: 5px 20px;
+            span {
+                &:hover {
+                    color: $light-green;
+                    cursor: pointer;
+                }
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

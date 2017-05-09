@@ -12,9 +12,9 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var profiler_service_1 = require("../../../lib/helpers/profiler/profiler.service");
 var DashboardComponent = (function () {
-    function DashboardComponent(router, profile) {
+    function DashboardComponent(router, prof) {
         this.router = router;
-        this.profile = profile;
+        this.prof = prof;
         this.navStatus = 'out';
         this.menuItems = [
             {
@@ -53,9 +53,20 @@ var DashboardComponent = (function () {
                         icon: 'fa fa-pencil'
                     }
                 ]
+            },
+            {
+                title: 'sched',
+                status: 'out',
+                subMenu: [
+                    {
+                        name: 'sched',
+                        title: 'sched',
+                        icon: 'fa fa-calendar'
+                    }
+                ]
             }
         ];
-        this.profile = profile.getProfile();
+        this.profile = prof.getProfile();
     }
     DashboardComponent.prototype.ngOnInit = function () {
         this.name = this.profile.info.shortName;
@@ -80,8 +91,8 @@ var DashboardComponent = (function () {
             templateUrl: 'app/template/dashboard.tp.html',
             animations: [
                 core_1.trigger('acordion', [
-                    core_1.state('in', core_1.style({ height: '*', overflow: 'hidden' })),
-                    core_1.state('out', core_1.style({ height: 0, overflow: 'hidden' })),
+                    core_1.state('in', core_1.style({ height: '*' })),
+                    core_1.state('out', core_1.style({ height: 0 })),
                     core_1.transition('in => out', core_1.animate('400ms ease-in')),
                     core_1.transition('out => in', core_1.animate('400ms ease-in'))
                 ])

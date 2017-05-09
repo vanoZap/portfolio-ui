@@ -9,8 +9,8 @@ import {ProfileService} from "../../../lib/helpers/profiler/profiler.service";
 export class ViewComponent implements OnInit {
 
     private profile: any;
-    constructor(public profile: ProfileService) {
-        this.profile = profile.getProfile();
+    constructor(public prof: ProfileService) {
+        this.profile = prof.getProfile();
     }
 
     ngOnInit() {

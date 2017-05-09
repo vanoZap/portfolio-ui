@@ -7,8 +7,8 @@ import {ProfileService} from "../../../lib/helpers/profiler/profiler.service";
     templateUrl: 'app/template/dashboard.tp.html',
     animations: [
         trigger('acordion', [
-            state('in', style({height: '*', overflow: 'hidden'})),
-            state('out', style({height: 0, overflow: 'hidden'})),
+            state('in', style({height: '*'})),
+            state('out', style({height: 0})),
             transition('in => out', animate('400ms ease-in')),
             transition('out => in', animate('400ms ease-in'))
         ])
@@ -59,13 +59,24 @@ export class DashboardComponent implements OnInit {
                     icon: 'fa fa-pencil'
                 }
             ]
+        },
+        {
+            title: 'sched',
+            status: 'out',
+            subMenu: [
+                {
+                    name: 'sched',
+                    title: 'sched',
+                    icon: 'fa fa-calendar'
+                }
+            ]
         }
     ];
 
     constructor(
         private router: Router,
-        private profile: ProfileService) {
-        this.profile = profile.getProfile();
+        private prof: ProfileService) {
+        this.profile = prof.getProfile();
     }
 
     ngOnInit() {

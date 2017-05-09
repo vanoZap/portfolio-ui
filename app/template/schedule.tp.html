@@ -1,0 +1,31 @@
+<section class="schedule future">
+    <h1>Schedule on day</h1>
+    <div class="header-schedule clearfix">
+        <label class="day">Friday</label>
+        <label class="date-on-day">9.12.2016</label>
+    </div>
+    <div class="table-titles clearfix">
+        <label>Start time</label>
+        <label>Description</label>
+        <label>Tasks</label>
+        <label>Location</label>
+    </div>
+    <div class="schedule-items">
+        <div class="item clearfix">
+            <div class="time">
+                <input text-mask type="text" placeholder="11:00"/>
+            </div>
+            <textarea class="description" placeholder="Enter your description"></textarea>
+            <div class="tasks">
+                <input (keydown)="onKeyEnterAddTask($event)" type="text" placeholder="Enter you task"/>
+                <span (click)="onClickAddTask($event)"><i class="fa fa-plus"></i>Add</span>
+            </div>
+            <div class="location">
+                <input type="text" placeholder="Choose location" />
+            </div>
+        </div>
+        <div class="new">
+            <span (click)="onAddNewRecord()"><i class="fa fa-plus"></i>Add new record</span>
+        </div>
+    </div>
+</section>

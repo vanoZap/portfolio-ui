@@ -3,6 +3,7 @@ var router_1 = require('@angular/router');
 var map_component_1 = require('./../../template/controllers/map/map.component');
 var chart_component_1 = require('./../../template/controllers/charts/chart.component');
 var view_component_1 = require('./../../template/controllers/view/view.component');
+var schedule_component_1 = require("../../template/controllers/schedule/schedule.component");
 var appRoutes = [
     {
         path: 'map',
@@ -15,6 +16,10 @@ var appRoutes = [
     {
         path: 'view',
         component: view_component_1.ViewComponent
+    },
+    {
+        path: 'sched',
+        component: schedule_component_1.ScheduleComponent
     },
     {
         path: '',

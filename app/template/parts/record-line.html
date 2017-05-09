@@ -1,0 +1,13 @@
+<div class="item clearfix">
+    <div class="time">
+        <input text-mask type="text" placeholder="11:00"/>
+    </div>
+    <textarea class="description" placeholder="Enter your description"></textarea>
+    <div class="tasks">
+        <input (keydown)="onKeyEnterAddTask($event)" type="text" placeholder="Enter you task"/>
+        <span (click)="onClickAddTask($event)"><i class="fa fa-plus"></i>Add</span>
+    </div>
+    <div class="location">
+        <input type="text" placeholder="Choose location" />
+    </div>
+</div>

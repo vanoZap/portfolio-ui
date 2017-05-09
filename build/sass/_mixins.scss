@@ -15,3 +15,8 @@
     -ms-flex-direction: $direction;
     flex-direction: $direction;
 }
+
+@mixin flex-h-align($val) {
+    -webkit-justify-content: $val;
+    justify-content: $val;
+}

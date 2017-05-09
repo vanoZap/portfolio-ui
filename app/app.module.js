@@ -10,14 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('../app.component');
-var app_routing_1 = require('./../lib/router/app.routing');
-var header_component_1 = require('./../template/controllers/header/header.component');
-var dashboard_component_1 = require('./../template/controllers/dashboard/dashboard.component');
-var map_component_1 = require('./../template/controllers/map/map.component');
-var chart_component_1 = require('./../template/controllers/charts/chart.component');
-var view_component_1 = require('./../template/controllers/view/view.component');
-var profiler_service_1 = require('./../lib/helpers/profiler/profiler.service');
+var app_component_1 = require('./app.component');
+var app_routing_1 = require('./lib/router/app.routing');
+var http_1 = require('@angular/http');
+var header_component_1 = require('./template/controllers/header/header.component');
+var dashboard_component_1 = require('./template/controllers/dashboard/dashboard.component');
+var map_component_1 = require('./template/controllers/map/map.component');
+var chart_component_1 = require('./template/controllers/charts/chart.component');
+var view_component_1 = require('./template/controllers/view/view.component');
+var schedule_component_1 = require('./template/controllers/schedule/schedule.component');
+var profiler_service_1 = require('./lib/helpers/profiler/profiler.service');
+var text_mask_directive_1 = require('./lib/directive/text-mask.directive');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,7 +28,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                app_routing_1.routing
+                app_routing_1.routing,
+                http_1.HttpModule,
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -33,7 +37,9 @@ var AppModule = (function () {
                 dashboard_component_1.DashboardComponent,
                 map_component_1.MapComponent,
                 chart_component_1.ChartComponent,
-                view_component_1.ViewComponent
+                view_component_1.ViewComponent,
+                schedule_component_1.ScheduleComponent,
+                text_mask_directive_1.TextMaskDirective
             ],
             providers: [profiler_service_1.ProfileService],
             bootstrap: [app_component_1.AppComponent]

@@ -22,7 +22,9 @@
         <ul *ngFor="let itemS of profile.settings"
                 class="list-group">
             <li class="list-group-item" >
-                <input type="checkbox" [attr.checked]="itemS.status">
+                <span *ngIf="itemS.status" class="check-on"></span>
+                <span *ngIf="!itemS.status" class="check-off"></span>
+                <input type="checkbox" [attr.checked]="itemS.status" hidden>
                 <label>{{itemS.name}}</label>
             </li>
         </ul>

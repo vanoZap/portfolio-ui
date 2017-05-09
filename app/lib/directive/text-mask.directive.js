@@ -8,23 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var profiler_service_1 = require("../../../lib/helpers/profiler/profiler.service");
-var ViewComponent = (function () {
-    function ViewComponent(prof) {
-        this.prof = prof;
-        this.profile = prof.getProfile();
+var core_1 = require('@angular/core');
+var TextMaskDirective = (function () {
+    function TextMaskDirective(el) {
+        VMasker(el.nativeElement).maskPattern("99:99");
     }
-    ViewComponent.prototype.ngOnInit = function () {
-    };
-    ViewComponent = __decorate([
-        core_1.Component({
-            selector: 'app-view',
-            templateUrl: 'app/template/view-profile.tp.html'
-        }), 
-        __metadata('design:paramtypes', [profiler_service_1.ProfileService])
-    ], ViewComponent);
-    return ViewComponent;
+    TextMaskDirective = __decorate([
+        core_1.Directive({ selector: '[text-mask]' }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], TextMaskDirective);
+    return TextMaskDirective;
 }());
-exports.ViewComponent = ViewComponent;
-//# sourceMappingURL=view.component.js.map
+exports.TextMaskDirective = TextMaskDirective;
+//# sourceMappingURL=text-mask.directive.js.map
